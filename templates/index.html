@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            width: 100vw;
+        }
+        .con{
+            height: 100vh;
+            width: 50vw;
+        }
+        #greet{
+            font-size: 14rem;
+            color: rgb(255, 166, 0);
+            text-shadow: 1px 1px 10px rgb(211, 211, 211);
+        }
+        h2{
+            color: rgb(25, 0, 5);
+            font-size: 5rem;
+            font-family: poppins;
+        }
+        #two{
+            background: #170a18;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #msgToUser{
+            color: white;
+            font-family: 'roboto';
+        }
+        a{
+            text-decoration: none;
+            color: rgb(30, 0, 49);
+        }
+        button{
+            padding: 10px 30px;
+            background: rgb(12, 255, 12);
+            font-family: poppins;
+            outline: none;
+            border: none;
+            box-shadow: 1px 1px 10px rgb(12, 255, 12);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h1 id="greet">Hello </h1>
+        <h2>We are here To solve Your Problems</h2>
+    </div>
+    <div class="con" id="two">
+        <h2 id="msgToUser">Good mornig</h2>
+        <button><a href="/signup">Get Started</a></button>
+    </div>
+    <script>
+        msg = document.querySelector('#msgToUser')
+        dt = new Date()
+        time = dt.getHours()
+        if(time<12){
+            msg.innerHTML = "Good Morning"
+        }else if(time>12 && time<18){
+            msg.innerHTML = "Good Afternoon"
+        }else if(time>18 && time<21){
+            msg.innerHTML = "Good Evening"
+        }else{
+            ms.innerHTML = "What about you?"
+        }
+    </script>
+</body>
+</html>

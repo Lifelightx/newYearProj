@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <style> 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        form {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            padding: 12px 40px;
+            width: 100%;
+            background-color: #1869d2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            
+        }
+        p {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            width: 100%;
+            max-width: 420px;
+            margin-top: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <form method="POST">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Log In">
+            <p>Don't have an account? <a href="/signup">Sign up</a></p>            
+        </form>
+    </div>
+    <div class="con">
+        <img src="https://img.freepik.com/free-vector/happy-new-year-2025-holiday-background-design_1017-56751.jpg?t=st=1735551006~exp=1735554606~hmac=5f2dc8b45502634021d9edb7b61b3e5cc248c426a6dc91c27cb64cf65741fd10&w=826" alt="">
+    </div>
+        
+</body>
+</html>
