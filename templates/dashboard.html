@@ -18,16 +18,16 @@
             font-family: 'Poppins', sans-serif;
         }
         
-        
         h3, button {
             font-family: 'Montserrat', sans-serif;
         }
         .pg{
-            height: 100vh;
-            width: 100vw;
+            min-height: 100vh;
+            width: 100%;
+            padding: 20px;
         }
         #one{
-            background: linear-gradient(135deg, #ffffff, #f4eaff); /* Rich purple gradient background */
+            background: linear-gradient(135deg, #ffffff, #f4eaff);
         }
         #new{
             font-family: 'Merry christmas', sans-serif;
@@ -39,9 +39,9 @@
             background: rgb(255, 255, 255);
         }
         nav {
-            background: rgba(255, 255, 255, 0.8);
+
             backdrop-filter: blur(5px);
-            padding: 1rem 2rem;
+            padding: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -55,7 +55,7 @@
         }
         nav h3 {
             color: #333;
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
         }
         nav button {
             padding: 0.5rem 1.5rem;
@@ -80,11 +80,12 @@
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding: 20px;
         }
 
         .greeting {
             text-align: center;
-            font-size: 6.5rem;
+            font-size: clamp(3rem, 10vw, 6.5rem);
             line-height: 1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             animation: float 3s ease-in-out infinite;
@@ -93,14 +94,14 @@
         .happy {
             display: block;
             animation: slideIn 1s ease-out;
-            color: #16001e; /* Soft pink */
+            color: #16001e;
             line-height: 1;
         }
 
         .new {
             display: block;
             color: #030303;
-            font-size: 8.5rem;
+            font-size: clamp(4rem, 12vw, 8.5rem);
             font-weight: bold;
             animation: glow 2s ease-in-out infinite;
             margin: -0.2em 0;
@@ -110,11 +111,10 @@
             display: block;
             animation: slideIn 1s ease-out 0.5s backwards;
             color: #16001e;
-             /* Aquamarine */
-             font-size: 11rem;
+            font-size: clamp(5rem, 15vw, 11rem);
         }
         #yr{
-            font-size: 12rem;
+            font-size: clamp(6rem, 18vw, 12rem);
         }
 
         .fireworks {
@@ -130,7 +130,7 @@
         .fireworks::after {
             content: '';
             position: absolute;
-            width: 10px; /* Even larger fireworks */
+            width: 10px;
             height: 10px;
             border-radius: 50%;
             box-shadow: 
@@ -189,18 +189,57 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            gap: 20px;
         }
         #msg{
-            padding: 20px 20%;
-            font-size: larger;
+            padding: 20px;
+            font-size: clamp(1rem, 2.5vw, 1.2rem);
             text-align: justify;
             font-family:'Courier New', Courier, monospace;
+            max-width: 1000px;
+            width: 90%;
         }
         #three p{
             text-align: center;
+            padding: 0 20px;
+            max-width: 800px;
         }
         img{
-            width: 400px;
+            max-width: 100%;
+            height: auto;
+            width: min(400px, 90vw);
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                padding: 0.8rem;
+            }
+            
+            nav button {
+                padding: 0.4rem 1.2rem;
+            }
+
+            .content {
+                padding: 10px;
+            }
+
+            #msg {
+                padding: 15px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .pg {
+                padding: 10px;
+            }
+            
+            nav {
+                padding: 0.6rem;
+            }
+
+            nav button {
+                padding: 0.3rem 1rem;
+            }
         }
     </style>
 </head>
@@ -237,8 +276,8 @@
         <p>
             Remember, every great application starts with a single line of code, and every success story begins with a bold idea. <br>
             <strong>Take risks, innovate, and keep learning.</strong> The world is your canvas, and your code is the masterpiece. <br><br>
-            Let’s tackle this year with curiosity, resilience, and passion. Together, we’ll build not just better apps but better experiences, and maybe even a better world.<br><br>
-            Stay inspired, stay humble, and keep coding. Cheers to new beginnings, endless creativity, and a future we’ll script together. 🚀
+            Let's tackle this year with curiosity, resilience, and passion. Together, we'll build not just better apps but better experiences, and maybe even a better world.<br><br>
+            Stay inspired, stay humble, and keep coding. Cheers to new beginnings, endless creativity, and a future we'll script together. 🚀
         </p>
         <img src="https://img.freepik.com/free-vector/happy-new-year-2020-lettering-greeting-inscription-vector-illustration-eps10_87521-3994.jpg?t=st=1735568486~exp=1735572086~hmac=6a0efd36ec870dba5cde3dc31609193f4f0a3703754dfc17a8051f6a1d2f9484&w=900" alt="">
     </div>
