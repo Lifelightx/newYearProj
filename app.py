@@ -1,4 +1,4 @@
-from flask import Flask,redirect,render_template,url_for,request,session
+from flask import Flask,redirect,render_template,url_for,request,session,flash
 from werkzeug.security import generate_password_hash,check_password_hash
 import MySQLdb 
 
@@ -58,10 +58,9 @@ def login():
             querry = "select * from users where email=%s"
             cursor.execute(querry,(email,))
             user = cursor.fetchone()
-            print(user)
+            # print(user)
             if user and check_password_hash(user[3], password):
-                # flash('Logged in successfully!')
-                print("Loged in successfully!")
+                
                 session['username'] = user[2]
                 session['name'] = user[1]
                 return redirect('/dashboard')
@@ -81,7 +80,40 @@ def login():
 def dashboard():
     if 'username' in session:
         return render_template('dashboard.html', s = session['name'])
-    return "<p>Please LogIn</p><br><a href='/login'>login</a>"
+    return """
+        <style>
+            body {
+                font-family: 'Poppins', sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(135deg, #ffffff, #f4eaff);
+            }
+            p {
+                font-size: 1.5rem;
+                color: #333;
+                margin-bottom: 1rem;
+            }
+            a {
+                text-decoration: none;
+                padding: 0.5rem 1.5rem;
+                border-radius: 25px;
+                background: linear-gradient(45deg, #ff3589, #ff774a);
+                color: white;
+                font-weight: bold;
+                transition: transform 0.2s ease;
+            }
+            a:hover {
+                transform: scale(1.05);
+            }
+        </style>
+        <p>Please LogIn</p>
+        <p>I know there are some smart people who will try to do this but sorry </p>
+        <a href='/login'>Login</a>
+    """
 
 @app.route('/logout')
 

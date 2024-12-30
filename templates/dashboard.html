@@ -3,12 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New year Wishing</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/merry-christmas');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        
+        h3, button {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .pg{
+            height: 100vh;
+            width: 100vw;
+        }
+        #one{
+            background: linear-gradient(135deg, #ffffff, #f4eaff); /* Rich purple gradient background */
+        }
+        #new{
+            font-family: 'Merry christmas', sans-serif;
+        }
+        #two{
+            background: rgb(247, 255, 251);
+        }
+        #three{
+            background: rgb(255, 255, 255);
+        }
+        nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav:hover {
+            background: rgba(255, 255, 255, 0.95);
+        }
+        nav h3 {
+            color: #333;
+            font-size: 1.5rem;
+        }
+        nav button {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(45deg, #ff3589, #ff774a);
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        nav button:hover {
+            transform: scale(1.05);
+        }
+        nav button a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .greeting {
+            text-align: center;
+            font-size: 6.5rem;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .happy {
+            display: block;
+            animation: slideIn 1s ease-out;
+            color: #16001e; /* Soft pink */
+            line-height: 1;
+        }
+
+        .new {
+            display: block;
+            color: #030303;
+            font-size: 8.5rem;
+            font-weight: bold;
+            animation: glow 2s ease-in-out infinite;
+            margin: -0.2em 0;
+        }
+
+        .year {
+            display: block;
+            animation: slideIn 1s ease-out 0.5s backwards;
+            color: #16001e;
+             /* Aquamarine */
+             font-size: 11rem;
+        }
+        #yr{
+            font-size: 12rem;
+        }
+
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .fireworks::before,
+        .fireworks::after {
+            content: '';
+            position: absolute;
+            width: 10px; /* Even larger fireworks */
+            height: 10px;
+            border-radius: 50%;
+            box-shadow: 
+                -120px -218.66667px #ff69b4,
+                248px -16.66667px #7fffd4,
+                190px 16.33333px #ffd700,
+                -113px -308.66667px #ff9ecd,
+                -109px -287.66667px #00ffff,
+                -50px -313.66667px #ff69b4,
+                226px -31.66667px #ffd700,
+                180px -351.66667px #7fffd4,
+                -12px -338.66667px #ff9ecd,
+                220px -388.66667px #00ffff;
+            animation: fireworks 3s linear infinite;
+        }
+
+        .fireworks::after {
+            animation-delay: 1.25s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% { 
+                text-shadow: 0 0 15px #FFD700,
+                           0 0 25px #FFD700,
+                           0 0 35px #FFD700;
+            }
+            50% { 
+                text-shadow: 0 0 25px #FFD700,
+                           0 0 35px #FFD700,
+                           0 0 45px #FFD700;
+            }
+        }
+
+        @keyframes fireworks {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        #two,#three{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #msg{
+            padding: 20px 20%;
+            font-size: larger;
+            text-align: justify;
+            font-family:'Courier New', Courier, monospace;
+        }
+        #three p{
+            text-align: center;
+        }
+        img{
+            width: 400px;
+        }
+    </style>
 </head>
 <body>
-    Hello I have been loged In.
-    <h1>sorry for the inter action </h1>
-    <p>Hello {{s}}</p>
-    <a href="/logout">Log out</a>
+    <div class="pg" id="one">
+        <nav>
+            <h3>To {{s}}</h3>
+            <button><a href="/logout">Logout</a></button>
+        </nav>
+        <div class="content">
+            <h1 class="greeting">
+                <span class="happy">Happy</span>
+                <br>
+                <span class="new" id="new">New</span>
+                <br>
+                <span class="year">Year <span id="yr">2025</span></span>
+            </h1>
+            <div class="fireworks"></div>
+        </div>
+    </div>
+    <div class="pg" id="two">
+        <h1>Wishing You</h1>
+        <p id="msg" style="font-family: 'Source Code Pro', monospace;">
+            <span style="color: #007ACC;">Dear Code Wizard</span>,{{s}} <br><br>
+            <span style="color: #16B8BF;">As we step into a brand-new year</span>, <span style="color: #FF6B6B;">may your code always compile</span>, <span style="color: #4FC3F7;">your bugs be easy to squash</span>, and <span style="color: #FFD700;">your deadlines be kind</span>. Let this year be the perfect balance of <strong style="color: #FF69B4;">logic and creativity</strong>, just like the cleanest piece of code.<br><br>
+            <span style="color: #32CD32;">Here's to building dreams</span>, <span style="color: #00BFFF;">one line of code at a time</span>, and to <span style="color: #1E90FF;">chasing big ideas with even bigger hearts</span>. May your algorithms find their optimal path, and may every challenge you face this year be an opportunity to innovate.<br><br>
+            <span style="color: #FF7F50;">Let's debug life's problems together</span>, <span style="color: #FFA500;">version by version</span>. Cheers to endless coffee, infinite loops of happiness, and an open-source future filled with possibilities! <br><br>
+            <em style="color: #FF1493;">Happy New Year 2025!</em>
+        </p>
+    </div>
+    <hr>
+    <div class="pg" id="three">
+        <h2>Let's Make This Year Exceptional!</h2>
+        <p>
+            Remember, every great application starts with a single line of code, and every success story begins with a bold idea. <br>
+            <strong>Take risks, innovate, and keep learning.</strong> The world is your canvas, and your code is the masterpiece. <br><br>
+            Let’s tackle this year with curiosity, resilience, and passion. Together, we’ll build not just better apps but better experiences, and maybe even a better world.<br><br>
+            Stay inspired, stay humble, and keep coding. Cheers to new beginnings, endless creativity, and a future we’ll script together. 🚀
+        </p>
+        <img src="https://img.freepik.com/free-vector/happy-new-year-2020-lettering-greeting-inscription-vector-illustration-eps10_87521-3994.jpg?t=st=1735568486~exp=1735572086~hmac=6a0efd36ec870dba5cde3dc31609193f4f0a3703754dfc17a8051f6a1d2f9484&w=900" alt="">
+    </div>
+    
 </body>
 </html>
